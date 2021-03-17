@@ -1,9 +1,9 @@
-# Blank Canvas Fullstack App🎨
+# CSV Generator
 
-I built this template to expedite the refactoring of my projects. Made using the MERN/SERN stack, React hooks, and styled-components. Once installed, the app displays an array of seeded data from the database of choice, received from a GET request to the server on page load.
+Simple jQuery app that converts JSON data to CSV formatted text. The user can paste text via a form or upload, preview the result, and download the converted text as a .txt afterwards.
 
 <p align="center">
-<img src="screenshot.png" width="215"/>
+<img src="screenshot.png" width="800"/>
 </p>
 
 ## Fullstack Setup:
