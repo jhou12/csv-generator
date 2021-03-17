@@ -1,54 +1,49 @@
-console.log('APP TEST')
+// SUBMIT FORM
 
-// FORM SUBMIT
-var formstuff = document.getElementById("data")
+var formElement = document.getElementById("data")
 $("#submit").click(function(e) {
-  console.log('SUBMIT TEXTAREA CLICKED')
   e.preventDefault();
-  // console.log(formstuff.value) // MUST TARGET VALUE!!!
   $.ajax({
     type: "POST",
-    url: 'http://localhost:3000/upload',
-    data: {data: formstuff.value}, // MUST BE OBJ!!!
+    url: '/upload',
+    data: {data: formElement.value},
     success: function(response) {
-      console.log('RESPONSE', response)
       $("#results").html(response)
       download(response)
     },
-    dataType: 'text' // MUST BE TEXT NOT JSON OR SUCCESS CB DOESN'T RUN (?!)
+    dataType: 'text' // must be text (not json) or success cb doesn't run
   })
 })
 
-// FILE SUBMIT
+// SUBMIT FILE
+
 $("#submit2").click(function(e) {
   e.preventDefault();
-  console.log('SUBMIT FILE CLICKED')
-  var file = $('input:file')['0'].files[0] //SPECIAL SYNTAX
-  var reader = new FileReader() // FILEREADER
+  var file = $('input:file')['0'].files[0]
+  var reader = new FileReader()
   reader.onload = function(e) {
-    console.log(reader.result)
     var text = reader.result
-    run(text) // RUN AJAX AS FUNCTION AFTER TEXT READ BC ASYNC!
+    convertToCSV(text)
   }
   reader.readAsText(file)
 
-  var run = function(text) {
+  var convertToCSV = function(text) {
     $.ajax({
       type: "POST",
-      url: 'http://localhost:3000/uploadFile',
-      data: text, // ALREADY OBJ IN REQ.BODY
+      url: '/uploadFile',
+      data: text,
       contentType: 'application/json',
       success: function(response) {
-        console.log('RESPONSE', response)
         $("#results").html(response)
         download(response)
       },
-      dataType: 'text' // MUST BE TEXT NOT JSON OR SUCCESS CB DOESN'T RUN (?!)
+      dataType: 'text'
     })
   }
 })
 
 // DOWNLOAD
+
 var download = function(res) {
   var arr = res.split('<br>')
   var newtext = arr.join('\n')
@@ -63,6 +58,6 @@ var download = function(res) {
   }
 
   document.querySelector('#dl').addEventListener('click', () => {
-    downloadToFile(newtext, 'blobtest.txt', 'text/plain')
+    downloadToFile(newtext, 'csv.txt', 'text/plain')
   })
 }
