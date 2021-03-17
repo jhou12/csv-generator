@@ -15,20 +15,21 @@
     <h1>CSV Report Generator</h1>
 
     <form method="post" action="/upload">
-      <textarea rows="10" cols="35" name="data" id="data"></textarea>
+      Paste JSON:
+      <p></p><textarea rows="10" cols="35" name="data" id="data"></textarea>
       <br><button type ='submit' id="submit">Submit</button>
     </form>
 
-    <div id="part2">
-    <br><form id="form"></form>
-    <label for="data2">Or choose file to upload: </label>
+    <p></p><div id="part2">
+    <form id="form"></form>
+    <label for="data2">or choose file to upload: </label>
     <p></p><input type="file" id="data2" name="data2" multiple>
-    <button type="submit" id="submit2">Submit</button>
-    </div>
+  </div>
+  <p></p><button type="submit" id="submit2">Submit</button>
 
     <p></p><div id="results"></div>
 
-    <p></p><br><div id="dl"><button id="dl">Download as .txt file!</button></div>
+    <p></p><br><div id="dl">Download file!<p></p><button id="dl">Download as .txt file!</button></div>
 
     <script src="app.js"></script>
   </body>

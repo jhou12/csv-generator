@@ -1,19 +1,18 @@
 body {
   font-family: 'Roboto Slab', serif;
-}
-
-h1 {
-  text-align: center
-}
-form {
-  text-align: center
-}
-#results {
-  text-align: center
+  text-align: center;
+  background-color: snow;
 }
 #part2 {
-  text-align: center
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: gray;
+  margin: auto;
+  max-width: 275px;
+  padding: 20px;
+  border-radius: 8px;
 }
-#dl {
-  text-align: center
+input {
+  margin-left: 20%;
 }
