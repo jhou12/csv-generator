@@ -1,7 +1,6 @@
 body {
   font-family: 'Roboto Slab', serif;
   text-align: center;
-  background-color: snow;
 }
 #part2 {
   text-align: center;
@@ -9,9 +8,9 @@ body {
   border-width: 1px;
   border-color: gray;
   margin: auto;
-  max-width: 275px;
-  padding: 20px;
-  border-radius: 8px;
+  max-width: 300px;
+  padding-bottom: 20px;
+  border-radius: 5px;
 }
 input {
   margin-left: 20%;

@@ -16,20 +16,69 @@
 
     <form method="post" action="/upload">
       Paste JSON:
-      <p></p><textarea rows="10" cols="35" name="data" id="data"></textarea>
+      <p></p><textarea rows="10" cols="35" name="data" id="data">
+{
+  "firstName": "Joshie",
+  "lastName": "Wyattson",
+  "county": "San Mateo",
+  "city": "San Mateo",
+  "role": "Broker",
+  "sales": 1000000,
+  "children": [
+  {
+    "firstName": "Beth Jr.",
+    "lastName": "Johnson",
+    "county": "San Mateo",
+    "city": "Pacifica",
+    "role": "Manager",
+    "sales": 2900000,
+    "children": [
+      {
+        "firstName": "Smitty",
+        "lastName": "Won",
+        "county": "San Mateo",
+        "city": "Redwood City",
+        "role": "Sales Person",
+        "sales": 4800000,
+        "children": []
+      },
+      {
+        "firstName": "Allen",
+        "lastName": "Price",
+        "county": "San Mateo",
+        "city": "Burlingame",
+        "role": "Sales Person",
+        "sales": 2500000,
+        "children": []
+      }
+    ]
+  },
+  {
+    "firstName": "Beth",
+    "lastName": "Johnson",
+    "county": "San Francisco",
+    "city": "San Francisco",
+    "role": "Broker/Sales Person",
+    "sales": 7500000,
+    "children": []
+  }
+]
+}
+      </textarea>
       <br><button type ='submit' id="submit">Submit</button>
     </form>
 
+    <p></p>or choose file to upload:
     <p></p><div id="part2">
     <form id="form"></form>
-    <label for="data2">or choose file to upload: </label>
+    <label for="data2"></label>
     <p></p><input type="file" id="data2" name="data2" multiple>
   </div>
   <p></p><button type="submit" id="submit2">Submit</button>
 
     <p></p><div id="results"></div>
 
-    <p></p><br><div id="dl">Download file!<p></p><button id="dl">Download as .txt file!</button></div>
+    <p></p><br><div id="dl">Download file!<p></p><button id="dl">Download .txt</button></div>
 
     <script src="app.js"></script>
   </body>
