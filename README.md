@@ -10,5 +10,5 @@ Simple jQuery app that converts JSON data to CSV formatted text. The user can in
 
 1. `git clone`
 1. install dependencies with `npm install`
+1. start server with `npm run start`
 1. verify app up and running at `localhost:3000`
-1. for development, start nodemon with `npm run start`
